@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h1>About <%= @restaurant.name %></h1>
+      <%= simple_form_for(@restaurant) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :phone_number %>
+        <%= f.select :category, collection: Restaurant::CATEGORIES %>
+        <%= f.submit "Submit review", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <p><%= link_to "↵ Back to Home", restaurants_path %></p>
+    </div>
+  </div>
+</div>
